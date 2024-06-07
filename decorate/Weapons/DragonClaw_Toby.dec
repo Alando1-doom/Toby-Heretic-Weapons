@@ -1,0 +1,55 @@
+ACTOR DragonClaw_Toby : Blaster replaces Blaster
+{
+	Game Heretic
+	Weapon.UpSound "weapons/dragonclaw_up"
+	Inventory.PickupSound "weapons/dragonclaw_pkup"
+	Weapon.AmmoType "BlasterAmmo"
+	Weapon.SisterWeapon "DragonClawPowered_Toby"
+	Decal RailScorch
+	States
+	{
+	Spawn:
+		WBLS A 1 A_SpawnItemEx("WeaponPickupChecker_DragonClaw", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WBLS A 34
+        Loop
+	Ready:
+		BLSR A 1 A_WeaponReady
+		Loop
+	Deselect:
+		BLSR A 1 A_Lower
+		Loop
+	Select:
+		BLSR A 1 A_Raise
+		Loop
+	Fire:
+		BLSR BC 3 Bright
+	Hold:
+		BLSR D 2 Bright A_FireBlasterPL1
+		BLSR CB 2 Bright
+		BLSR A 0 A_ReFire
+		Goto Ready
+	}
+}
+
+ACTOR DragonClawPowered_Toby : BlasterPowered
+{
+	Game Heretic
+	+WEAPON.POWERED_UP
+	Weapon.UpSound "weapons/dragonclaw_up"
+	Weapon.AmmoType "BlasterAmmo"
+	Weapon.SisterWeapon "DragonClaw_Toby"
+	Decal RailScorch
+	States
+	{
+	Ready:
+		BLSR EFG 3 A_WeaponReady
+		Loop
+	Fire:
+		BLSR BC 0 Bright
+	Hold:
+		BLSR D 3 Bright A_FireCustomMissile("BlasterFX1")
+		BLSR CB 4 Bright
+		BLSR A 0 A_ReFire
+		Goto Ready
+	}
+}

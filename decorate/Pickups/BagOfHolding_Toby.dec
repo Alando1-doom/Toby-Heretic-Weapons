@@ -1,0 +1,19 @@
+// Backpack
+
+ACTOR BagOfHolding_Toby : BackpackItem replaces BagOfHolding
+{
+	Game Heretic
+	SpawnID 136
+	Inventory.PickupSound "weapons/backpack_pkup"
+	Inventory.PickupFlash "BPack_ID"
+	Inventory.PickupMessage "$TXT_ITEMBAGOFHOLDING"
+	+COUNTITEM
+	+FLOATBOB
+	States
+	{
+	Spawn:
+		BAGH A 1 A_SpawnItemEx("BPackPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		BAGH A 29
+		Loop
+	}
+}

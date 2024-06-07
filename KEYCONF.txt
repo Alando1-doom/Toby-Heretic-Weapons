@@ -1,0 +1,3 @@
+weaponsection compilation
+ clearplayerclasses
+addplayerclass Corvus_Toby

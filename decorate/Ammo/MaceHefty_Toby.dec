@@ -1,0 +1,25 @@
+ACTOR MaceHefty_Toby : CustomInventory replaces MaceHefty
+{
+	Inventory.PickupSound "weapons/macehefty_pkup"
+	Inventory.PickupMessage "$TXT_AMMOMACE2"
+	Inventory.PickupFlash "BigBallsOfSteel_ID"
+States
+	{
+	Spawn:
+		AMM2 A 1 Bright A_SpawnItemEx("AmmoPickupChecker_BigBallsOfSteel", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		AMM2 A 29 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
+		TNT1 A 1 A_JumpIfInventory("MaceAmmo", 150, "NoPickup")
+		TNT1 A 1 A_GiveInventory("MaceAmmo", 100)
+		Stop
+	HasBP:
+		TNT1 A 1 A_JumpIfInventory("MaceAmmo", 300, "NoPickup")
+		TNT1 A 1 A_GiveInventory("MaceAmmo", 100)
+		Stop
+	NoPickup:
+		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+		Fail
+	}
+}

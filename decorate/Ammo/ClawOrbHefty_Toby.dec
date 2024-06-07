@@ -1,0 +1,28 @@
+ACTOR ClawOrbHefty_Toby : CustomInventory replaces BlasterHefty
+{
+	Inventory.PickupSound "weapons/clawhefty_pkup"
+	Inventory.PickupMessage "$TXT_AMMOBLASTER2"
+	Inventory.PickupFlash "EnergyOrb_ID"
+States
+	{
+	Spawn:
+		AMB2 A 3 Bright A_SpawnItemEx("AmmoPickupChecker_EnergyOrb", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		AMB2 BC 3 Bright
+		AMB2 ABC 3 Bright
+		AMB2 ABC 3 Bright
+		AMB2 ABC 3 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
+		TNT1 A 1 A_JumpIfInventory("BlasterAmmo", 200, "NoPickup")
+		TNT1 A 1 A_GiveInventory("BlasterAmmo", 25)
+		Stop
+	HasBP:
+		TNT1 A 1 A_JumpIfInventory("BlasterAmmo", 400, "NoPickup")
+		TNT1 A 1 A_GiveInventory("BlasterAmmo", 25)
+		Stop
+	NoPickup:
+		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+		Fail
+	}
+}

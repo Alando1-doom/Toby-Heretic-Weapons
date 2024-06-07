@@ -1,0 +1,54 @@
+ACTOR HellStaff_Toby : SkullRod replaces SkullRod
+{
+	Game Heretic
+	Weapon.UpSound "weapons/hellstaff_up"
+	Inventory.PickupSound "weapons/hellstaff_pkup"
+	Weapon.AmmoType1 "SkullRodAmmo"
+	Weapon.SisterWeapon "HellStaffPowered_Toby"
+	States
+	{
+	Spawn:
+		WSKL A 1 A_SpawnItemEx("WeaponPickupChecker_HellStaff", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WSKL A 34
+        Loop
+	Ready:
+		HROD A 1 A_WeaponReady
+		Loop
+	Deselect:
+		HROD A 1 A_Lower
+		Loop
+	Select:
+		HROD A 1 A_Raise
+		Loop
+	Fire:
+		HROD AB 4 Bright A_FireSkullRodPL1
+		HROD B 0 Bright A_ReFire
+		Goto Ready
+	}
+}
+
+ACTOR HellStaffPowered_Toby : SkullRodPowered
+{
+	Game Heretic
+	+WEAPON.POWERED_UP
+	Weapon.UpSound "weapons/hellstaff_up"
+	Weapon.AmmoType1 "SkullRodAmmo"
+	Weapon.SisterWeapon "HellStaff_Toby"
+	States
+	{
+	Ready:
+		HROD CCCCDDDDEEEEDDDD 1 A_WeaponReady
+		Loop
+	Fire:
+		HROD C 2 Bright
+		HROD D 3 Bright
+		HROD E 2 Bright
+		HROD F 3 Bright
+		HROD G 4 Bright A_FireSkullRodPL2
+		HROD F 2 Bright
+		HROD E 3 Bright
+		HROD D 2 Bright
+		HROD C 2 Bright A_ReFire
+		Goto Ready
+	}
+}

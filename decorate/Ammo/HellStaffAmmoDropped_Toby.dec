@@ -1,0 +1,27 @@
+ACTOR HellStaffAmmoDropped_Toby : CustomInventory //Dropped by the Sabre Claw
+{
+	Inventory.PickupSound "weapons/runeammo_pkup"
+	Inventory.PickupMessage "$TXT_AMMOSKULLROD1"
+	Inventory.PickupFlash "LesserRunes_ID"
+States
+	{
+	Spawn:
+		AMS1 A 5 Bright A_SpawnItemEx("AmmoPickupChecker_LesserRunes", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		AMS1 B 5 Bright
+		AMS1 AB 5 Bright
+		AMS1 AB 5 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
+		TNT1 A 1 A_JumpIfInventory("SkullRodAmmo", 200, "NoPickup")
+		TNT1 A 1 A_GiveInventory("SkullRodAmmo", 10)
+		Stop
+	HasBP:
+		TNT1 A 1 A_JumpIfInventory("SkullRodAmmo", 400, "NoPickup")
+		TNT1 A 1 A_GiveInventory("SkullRodAmmo", 10)
+		Stop
+	NoPickup:
+		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+		Fail
+	}
+}

@@ -1,0 +1,52 @@
+ACTOR PhoenixRod_Toby : PhoenixRod replaces PhoenixRod
+{
+	Game Heretic
+	Weapon.UpSound "weapons/phoenix_up"
+	Inventory.PickupSound "weapons/phoenix_pkup"
+	Weapon.AmmoType "PhoenixRodAmmo"
+	Weapon.Sisterweapon "PhoenixRodPowered_Toby"
+	States
+	{
+	Spawn:
+		WPHX A 1 A_SpawnItemEx("WeaponPickupChecker_PhoenixRod", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WPHX A 34
+        Loop
+	Ready:
+		PHNX A 1 A_WeaponReady
+		Loop
+	Deselect:
+		PHNX A 1 A_Lower
+		Loop
+	Select:
+		PHNX A 1 A_Raise
+		Loop
+	Fire:
+		PHNX B 5 Bright
+		PHNX C 7 Bright A_FirePhoenixPL1
+		PHNX DB 4 Bright
+		PHNX B 0 Bright A_ReFire
+		Goto Ready
+	}
+}
+
+ACTOR PhoenixRodPowered_Toby : PhoenixRodPowered
+{
+	Game Heretic
+	+WEAPON.POWERED_UP
+	+WEAPON.MELEEWEAPON
+	Weapon.UpSound "weapons/phoenix_up"
+	Weapon.AmmoType "PhoenixRodAmmo"
+	Weapon.SisterWeapon "PhoenixRod_Toby"
+	Tag "$TAG_PHOENIXRODP"
+	States
+	{
+	Fire:
+		PHNX B 3 Bright A_InitPhoenixPL2
+	Hold:
+		PHNX C 1 Bright A_FirePhoenixPL2
+		PHNX B 4 Bright A_ReFire
+	Powerdown:
+		PHNX B 4 Bright A_ShutdownPhoenixPL2
+		Goto Ready
+	}
+}

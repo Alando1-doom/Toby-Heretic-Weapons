@@ -1,0 +1,97 @@
+//Ammo Directory
+#include decorate/Ammo/GoldWandAmmo_Toby.dec
+#include decorate/Ammo/GoldWandAmmoDropped_Toby.dec
+#include decorate/Ammo/GoldWandHefty_Toby.dec
+#include decorate/Ammo/CrossbowAmmo_Toby.dec
+#include decorate/Ammo/CrossbowAmmoDropped_Toby.dec
+#include decorate/Ammo/CrossbowHefty_Toby.dec
+#include decorate/Ammo/MaceAmmo_Toby.dec
+#include decorate/Ammo/MaceHefty_Toby.dec
+#include decorate/Ammo/ClawOrb_Toby.dec
+#include decorate/Ammo/ClawOrbDropped_Toby.dec
+#include decorate/Ammo/ClawOrbHefty_Toby.dec
+#include decorate/Ammo/HellStaffAmmo_Toby.dec
+#include decorate/Ammo/HellStaffAmmoDropped_Toby.dec
+#include decorate/Ammo/HellStaffHefty_Toby.dec
+#include decorate/Ammo/PhoenixRodAmmo_Toby.dec
+#include decorate/Ammo/PhoenixRodHefty_Toby.dec
+
+//Announcers Directory
+//Ammo Announcer
+#include decorate/Announcers/AmmoAnnouncers/CrystalAnn.dec
+#include decorate/Announcers/AmmoAnnouncers/GeodeAnn.dec
+#include decorate/Announcers/AmmoAnnouncers/ClawOrbAnn.dec
+#include decorate/Announcers/AmmoAnnouncers/EnergyOrbAnn.dec
+#include decorate/Announcers/AmmoAnnouncers/ArrowsAnn.dec
+#include decorate/Announcers/AmmoAnnouncers/QuiverAnn.dec
+#include decorate/Announcers/AmmoAnnouncers/InfernoSmallAnn.dec
+#include decorate/Announcers/AmmoAnnouncers/InfernoBigAnn.dec
+#include decorate/Announcers/AmmoAnnouncers/LesserRunesAnn.dec
+#include decorate/Announcers/AmmoAnnouncers/GreaterRunesAnn.dec
+#include decorate/Announcers/AmmoAnnouncers/SmallBallsAnn.dec
+#include decorate/Announcers/AmmoAnnouncers/BigBallsAnn.dec
+//Pickup Announcer
+#include decorate/Announcers/PickupAnnouncers/BPackAnn.dec
+
+//Flashes Directory
+//Ammo Flashes
+#include decorate/Flashes/AmmoFlashes/Crystal_ID.dec
+#include decorate/Flashes/AmmoFlashes/Geode_ID.dec
+#include decorate/Flashes/AmmoFlashes/ClawOrb_ID.dec
+#include decorate/Flashes/AmmoFlashes/EnergyOrb_ID.dec
+#include decorate/Flashes/AmmoFlashes/Arrows_ID.dec
+#include decorate/Flashes/AmmoFlashes/Quiver_ID.dec
+#include decorate/Flashes/AmmoFlashes/InfernoSmall_ID.dec
+#include decorate/Flashes/AmmoFlashes/InfernoBig_ID.dec
+#include decorate/Flashes/AmmoFlashes/LesserRunes_ID.dec
+#include decorate/Flashes/AmmoFlashes/GreaterRunes_ID.dec
+#include decorate/Flashes/AmmoFlashes/SmallBallsOfSteel_ID.dec
+#include decorate/Flashes/AmmoFlashes/BigBallsOfSteel_ID.dec
+//Pickup Flashes
+#include decorate/Flashes/PickupFlashes/BPack_ID.dec
+
+//Pickup Checkers Directory
+//Ammo Checkers
+#include decorate/PickupCheckers/AmmoCheckers/WandCrystalChecker.dec
+#include decorate/PickupCheckers/AmmoCheckers/WandGeodeChecker.dec
+#include decorate/PickupCheckers/AmmoCheckers/ArrowChecker.dec
+#include decorate/PickupCheckers/AmmoCheckers/QuiverChecker.dec
+#include decorate/PickupCheckers/AmmoCheckers/ClawOrbChecker.dec
+#include decorate/PickupCheckers/AmmoCheckers/EnergyOrbChecker.dec
+#include decorate/PickupCheckers/AmmoCheckers/LesserRunesChecker.dec
+#include decorate/PickupCheckers/AmmoCheckers/GreaterRunesChecker.dec
+#include decorate/PickupCheckers/AmmoCheckers/FlameOrbChecker.dec
+#include decorate/PickupCheckers/AmmoCheckers/InfernoOrbChecker.dec
+#include decorate/PickupCheckers/AmmoCheckers/SmallBallsChecker.dec
+#include decorate/PickupCheckers/AmmoCheckers/BigBallsChecker.dec
+//Pickup Checkers
+#include decorate/PickupCheckers/PickupCheckers/BOHChecker.dec
+//WeaponCheckers
+#include decorate/PickupCheckers/WeaponCheckers/WeaponPickupChecker.dec
+#include decorate/PickupCheckers/WeaponCheckers/GauntletChecker.dec
+#include decorate/PickupCheckers/WeaponCheckers/CrossbowChecker.dec
+#include decorate/PickupCheckers/WeaponCheckers/DragonClawChecker.dec
+#include decorate/PickupCheckers/WeaponCheckers/HellStaffChecker.dec
+#include decorate/PickupCheckers/WeaponCheckers/PhoenixRodChecker.dec
+#include decorate/PickupCheckers/WeaponCheckers/FireMaceChecker.dec
+
+//Pickups Directory
+#include decorate/Pickups/BagOfHolding_Toby.dec
+
+//Player Directory
+#include decorate/Player/HereticPlayer.dec
+
+//Projectiles Directory
+#include decorate/Projectiles/CrossbowFX.dec
+#include decorate/Projectiles/HellStaffFX.dec
+#include decorate/Projectiles/PhoenixRodFX.dec
+
+//Weapons Directory
+#include decorate/Weapons/Staff_Toby.dec
+#include decorate/Weapons/Gauntlets_Toby.dec
+#include decorate/Weapons/GoldWand_Toby.dec
+#include decorate/Weapons/Crossbow_Toby.dec
+#include decorate/Weapons/DragonClaw_Toby.dec
+#include decorate/Weapons/HellStaff_Toby.dec
+#include decorate/Weapons/PhoenixRod_Toby.dec
+#include decorate/Weapons/FireMace_Toby.dec

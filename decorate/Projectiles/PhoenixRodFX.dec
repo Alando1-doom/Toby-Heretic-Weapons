@@ -1,0 +1,5 @@
+ACTOR PhoenixFX1_Toby : PhoenixFX1 replaces PhoenixFX1
+{
+	DeathSound "weapons/phoenixhit2"
+	Decal Scorch
+}

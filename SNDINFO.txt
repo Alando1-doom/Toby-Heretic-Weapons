@@ -1,0 +1,108 @@
+$random weapons/staffwhoosh { staff/swing1 staff/swing2 staff/swing3 }
+staff/swing1				stafmis1
+staff/swing2				stafmis2
+staff/swing3				stafmis3
+
+weapons/bowshoot		bowsht
+weapons/bowhit			hrnhit
+
+weapons/phoenixshoot		phosht
+weapons/phoenixhit2		phohit2
+
+weapons/gauntlet_pkup			gaunpck
+weapons/cbow_pkup				cbowpck
+weapons/dragonclaw_pkup	drgnpck
+weapons/hellstaff_pkup			hstfpck
+weapons/phoenix_pkup			phnxpck
+weapons/mace_pkup				macepck
+
+weapons/staff_up				staffup
+weapons/wand_up				wandup
+weapons/cbow_up				cbowup
+weapons/dragonclaw_up	clawup
+weapons/hellstaff_up			hstfup
+weapons/phoenix_up			phnxup
+weapons/mace_up				maceup
+
+weapons/gauntletbeacon			gaunbcn
+$rolloff weapons/gauntletbeacon		linear	56 300
+weapons/cbowbeacon				cbowbcn
+$rolloff weapons/cbowbeacon		linear	56 300
+weapons/dragonclawbeacon		drgnbcn
+$rolloff weapons/dragonclawbeacon		linear	56 300
+weapons/hellstaffbeacon				hstfbcn
+$rolloff weapons/hellstaffbeacon		linear	56 300
+weapons/phoenixbeacon			phnxbcn
+$rolloff weapons/phoenixbeacon		linear	56 300
+weapons/macebeacon				macebcn
+$rolloff weapons/macebeacon		linear	56 300
+
+weapons/wandammo_pkup	crysmpck
+weapons/wandhefty_pkup		crybgpck
+weapons/wandammobeacon	cryssmbc
+$rolloff weapons/wandammobeacon		linear	56 300
+weapons/wandheftybeacon	crysbgbc
+$rolloff weapons/wandheftybeacon		linear	56 300
+
+weapons/arrows_pkup			arwsmpck
+weapons/quiver_pkup				arwbgpck
+weapons/arrowsbeacon			arwsmbc
+$rolloff weapons/arrowsbeacon		linear	56 300
+weapons/quiverbeacon			arwbgbc
+$rolloff weapons/quiverbeacon		linear	56 300
+
+weapons/claworb_pkup			clawsmpk
+weapons/clawhefty_pkup		clawbgpk
+weapons/claworbbeacon		clawsmbc
+$rolloff weapons/claworbbeacon		linear	56 300
+weapons/clawheftybeacon		clawbgbc
+$rolloff weapons/clawheftybeacon		linear	56 300
+
+weapons/runeammo_pkup		runesmpk
+weapons/runehefty_pkup		runebgpk
+weapons/runebeacon				runesmbc
+$rolloff weapons/runebeacon		linear	56 300
+weapons/runeheftybeacon		runebgbc
+$rolloff weapons/runeheftybeacon		linear	56 300
+
+weapons/fireammo_pkup		infsmpck
+weapons/firehefty_pkup			infbgpck
+weapons/fireammobeacon		infsmbc
+$rolloff weapons/fireammobeacon		linear	56 300
+weapons/fireheftybeacon		infbgbc
+$rolloff weapons/fireheftybeacon		linear	56 300
+
+weapons/maceammo_pkup	macesmpk
+weapons/macehefty_pkup		macebgpk
+weapons/maceammobeacon	macesmbc
+$rolloff weapons/maceammobeacon		linear	56 300
+weapons/maceheftybeacon	macebgbc
+$rolloff weapons/maceheftybeacon		linear	56 300
+
+weapons/backpack_pkup		dsbpack
+$rolloff misc/bpbeacon	linear	56 300
+misc/bpbeacon		dsbckpbc
+ann/bagofholding	annbag
+
+stat/full		dsfull
+
+ann/crystal				anncryst
+ann/geode				anngeode
+ann/arrows				annarrow
+ann/quiver				annquivr
+ann/claworb				annorb1
+ann/energyorb			annorb2
+ann/firesmall			anninf1
+ann/firebig				anninf2
+ann/lesserrunes		annrune1
+ann/greaterrunes		annrune2
+ann/macesmall		annmace1
+ann/macebig			annmace2
+
+//Player Sounds
+
+$random player/footstep { player/step1 player/step2 player/step3 player/step4 }
+player/step1				step1
+player/step2				step2
+player/step3				step3
+player/step4				step4

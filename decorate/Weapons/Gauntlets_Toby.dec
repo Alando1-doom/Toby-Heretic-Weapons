@@ -1,0 +1,60 @@
+ACTOR Gauntlets_Toby : Gauntlets replaces Gauntlets
+{
+	Game Heretic
+	Inventory.PickupSound "weapons/gauntlet_pkup"
+	Weapon.SisterWeapon "GauntletsPowered_Toby"
+	States
+	{
+	Spawn:
+		WGNT A 1 A_SpawnItemEx("WeaponPickupChecker_Gauntlets", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WGNT A 34
+        Loop
+	Ready:
+		GAUN A 1 A_WeaponReady
+		Loop
+	Deselect:
+		GAUN A 1 A_Lower
+		Loop
+	Select:
+		GAUN A 1 A_Raise
+		Loop
+	Fire:
+		GAUN B 4 A_PlayWeaponSound("weapons/gauntletsuse")
+		GAUN C 4
+	Hold:
+		GAUN DEF 4 BRIGHT A_GauntletAttack(0)
+		GAUN C 4 A_ReFire
+		GAUN B 4 A_Light0
+		Goto Ready
+	}
+}
+
+
+ACTOR GauntletsPowered_Toby : GauntletsPowered
+{
+	Game Heretic
+	+POWERED_UP
+	Tag "$TAG_GAUNTLETSP"
+	Obituary "$OB_MPPGAUNTLETS"
+	Weapon.SisterWeapon "Gauntlets_Toby"
+	States
+	{
+	Ready:
+		GAUN GHI 4 A_WeaponReady
+		Loop
+	Deselect:
+		GAUN G 1 A_Lower
+		Loop
+	Select:
+		GAUN G 1 A_Raise
+		Loop
+	Fire:
+		GAUN J 4 A_PlayWeaponSound("weapons/gauntletsuse")
+		GAUN K 4
+	Hold:
+		GAUN LMN 4 BRIGHT A_GauntletAttack(1)
+		GAUN K 4 A_ReFire
+		GAUN J 4 A_Light0
+		Goto Ready
+	}
+}

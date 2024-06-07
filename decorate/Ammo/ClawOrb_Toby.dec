@@ -1,0 +1,30 @@
+// Dragon Claw Ammo
+
+ACTOR ClawOrb_Toby : CustomInventory replaces BlasterAmmo
+{
+	Inventory.PickupSound "weapons/claworb_pkup"
+	Inventory.PickupMessage "$TXT_AMMOBLASTER1"
+	Inventory.PickupFlash "ClawOrb_ID"
+States
+	{
+	Spawn:
+		AMB1 A 3 Bright A_SpawnItemEx("AmmoPickupChecker_ClawOrb", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		AMB1 BC 3 Bright
+		AMB1 ABC 3 Bright
+		AMB1 ABC 3 Bright
+		AMB1 ABC 3 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
+		TNT1 A 1 A_JumpIfInventory("BlasterAmmo", 200, "NoPickup")
+		TNT1 A 1 A_GiveInventory("BlasterAmmo", 10)
+		Stop
+	HasBP:
+		TNT1 A 1 A_JumpIfInventory("BlasterAmmo", 400, "NoPickup")
+		TNT1 A 1 A_GiveInventory("BlasterAmmo", 10)
+		Stop
+	NoPickup:
+		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+		Fail
+	}
+}

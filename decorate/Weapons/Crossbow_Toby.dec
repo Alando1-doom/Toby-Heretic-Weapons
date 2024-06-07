@@ -1,0 +1,70 @@
+ACTOR Crossbow_Toby : Crossbow replaces Crossbow
+{
+	Game Heretic
+	Weapon.SlotNumber 3
+	Weapon.YAdjust 0
+	Weapon.UpSound "weapons/cbow_up"
+	Inventory.PickupSound "weapons/cbow_pkup"
+	AttackSound "weapons/bowshoot"
+	Weapon.AmmoType "CrossbowAmmo"
+	Weapon.SisterWeapon "CrossbowPowered_Toby"
+	Decal CrossbowScorch
+	States
+	{
+	Spawn:
+		WBOW A 1 A_SpawnItemEx("WeaponPickupChecker_Crossbow", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WBOW A 34
+        Loop
+	Ready:
+		CRBW AAAABBBBCCCC 1 A_WeaponReady
+		Loop
+	Deselect:
+		CRBW A 1 A_Lower
+		Loop
+	Select:
+		CRBW A 1 A_Raise
+		Loop
+	Fire:
+		CRBW D 1 Bright A_PlayWeaponSound("weapons/bowshoot")//A_FireBullets(2,2,6,7,"CBowPuff",1)
+		CRBW D 0 Bright A_FireCustomMissile("CBowShot1",0,1,0,0)
+		CRBW D 0 Bright A_FireCustomMissile("CBowShot1",-2,0,0,0)
+		CRBW D 0 Bright A_FireCustomMissile("CBowShot1",2,0,0,0)
+		CRBW D 4 Bright
+		CRBW EFGH 3
+		CRBW AB 4
+		CRBW C 5 A_ReFire
+		Goto Ready
+	}
+}
+
+ACTOR CrossbowPowered_Toby : Crossbow_Toby
+{
+	Game Heretic
+	+WEAPON.POWERED_UP
+	Weapon.AmmoGive 0
+	Weapon.SisterWeapon "Crossbow_Toby"
+	Tag "$TAG_CROSSBOWP"
+	States
+	{
+	Ready:
+		CRBW IIIIJJJJKKK 1 A_WeaponReady
+		Loop
+	Fire:
+		//CRBW D 5 A_FireBullets(8,2,18,7,"CBowPuff",1)
+		CRBW D 1 Bright A_PlayWeaponSound("weapons/bowshoot")//A_FireBullets(2,2,6,7,"CBowPuff",1)
+		CRBW D 0 Bright A_FireCustomMissile("CBowShot2",0,1,0,0)
+		CRBW D 0 Bright A_FireCustomMissile("CBowShot2",-1,0,0,0)
+		CRBW D 0 Bright A_FireCustomMissile("CBowShot2",-2,0,0,0)
+		CRBW D 0 Bright A_FireCustomMissile("CBowShot2",2,0,0,0)
+		CRBW D 0 Bright A_FireCustomMissile("CBowShot2",1,0,0,0)
+		CRBW D 4 Bright
+		CRBW E 3
+		CRBW F 2
+		CRBW G 3
+		CRBW H 2
+		CRBW A 3
+		CRBW B 3
+		CRBW C 4 A_ReFire
+		Goto Ready
+	}
+}

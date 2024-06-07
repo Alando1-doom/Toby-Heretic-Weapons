@@ -1,0 +1,51 @@
+ACTOR FireMace_Toby : Mace replaces Mace
+{
+	Game Heretic
+	Weapon.UpSound "weapons/mace_up"
+	Inventory.PickupSound "weapons/mace_pkup"
+	Weapon.AmmoType "MaceAmmo"
+	Weapon.SisterWeapon "FireMacePowered_Toby"
+	States
+	{
+	Spawn:
+		WMCE A 1 A_SpawnItemEx("WeaponPickupChecker_Mace", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WMCE A 34
+        Loop
+	Ready:
+		MACE A 1 A_WeaponReady
+		Loop
+	Deselect:
+		MACE A 1 A_Lower
+		Loop
+	Select:
+		MACE A 1 A_Raise
+		Loop
+	Fire:
+		MACE B 4
+	Hold:
+		MACE CDEF 3 A_FireMacePL1
+		MACE C 4 A_ReFire
+		MACE DEFB 4
+		Goto Ready
+	}
+}
+
+ACTOR FireMacePowered_Toby : MacePowered
+{
+	Game Heretic
+	+WEAPON.POWERED_UP
+	Weapon.UpSound "weapons/mace_up"
+	Weapon.AmmoType "MaceAmmo"
+	Weapon.SisterWeapon "FireMace_Toby"
+	Tag "$TAG_MACEP"
+	States
+	{
+	Fire:
+	Hold:	
+		MACE B 4
+		MACE D 4 A_FireMacePL2
+		MACE B 4
+		MACE A 8 A_ReFire
+		Goto Ready
+	}
+}

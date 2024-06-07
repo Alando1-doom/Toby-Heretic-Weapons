@@ -1,0 +1,44 @@
+ACTOR GoldWand_Toby : GoldWand replaces GoldWand
+{
+	Game Heretic
+	Weapon.UpSound "weapons/wand_up"
+	Weapon.AmmoType "GoldWandAmmo"
+	Weapon.SisterWeapon "GoldWandPowered_Toby"
+	Decal HImpScorch1
+	States
+	{
+	Ready:
+		GWND A 1 A_WeaponReady
+		Loop
+	Deselect:
+		GWND A 1 A_Lower
+		Loop
+	Select:
+		GWND A 1 A_Raise
+		Loop
+	Fire:
+		GWND B 3 Bright
+		GWND C 5 Bright A_FireGoldWandPL1
+		GWND D 3 Bright
+		GWND D 0 Bright A_ReFire
+		Goto Ready
+	}
+}
+
+ACTOR GoldWandPowered_Toby : GoldWandPowered
+{
+	Game Heretic
+	Weapon.UpSound "weapons/wand_up"
+	Weapon.AmmoType "GoldWandAmmo"
+	Weapon.SisterWeapon "GoldWand_Toby"
+	Decal HImpScorch1
+	States
+	{
+	Fire:
+		GWND B 3 Bright
+		GWND C 4 Bright A_FireGoldWandPL2
+		GWND D 3 Bright
+		GWND D 0 Bright A_ReFire
+		Goto Ready
+	}
+}

@@ -1,0 +1,70 @@
+ACTOR Staff_Toby : Staff
+{
+	Game Heretic
+	Weapon.UpSound "weapons/staff_up"
+	Weapon.sisterweapon "StaffPowered_Toby"
+	States
+	{
+	Ready:	
+		STAF A 1 A_WeaponReady
+		Loop
+	Deselect:
+		STAF X 1 A_Lower
+		Loop
+	Select:
+		STAF X 1 A_Raise
+		Loop
+	Fire:
+		STAF B 1 A_PlaySound("weapons/staffwhoosh")
+		STAF C 1 A_StaffAttack(random[StaffAttack](5, 20), "StaffPuff")
+		STAF D 1
+		STAF EFG 1
+		TNT1 A 8
+		STAF GFEDCBA 1
+		STAF A 1 A_ReFire
+		Goto Ready
+	}
+}
+
+ACTOR StaffPowered_Toby : StaffPowered
+{
+	Game Heretic
+	Weapon.sisterweapon "Staff_Toby"
+	Weapon.ReadySound "weapons/staffcrackle"
+	Weapon.UpSound "weapons/staff_up"
+	+WEAPON.POWERED_UP
+	+WEAPON.READYSNDHALF
+	+WEAPON.STAFF2_KICKBACK
+	Obituary "$OB_MPPSTAFF"
+	Tag "$TAG_STAFFP"
+	States
+	{
+	Ready:	
+		STAF A 3 Bright A_WeaponReady
+		STAF A 3 A_WeaponReady
+		Loop
+	Deselect:
+		STAF X 1 A_Lower
+		Loop
+	Select:
+		STAF X 1 A_Raise
+		Loop
+	Fire:
+		STAF B 1 A_PlaySound("weapons/staffwhoosh")
+		STAF C 1 Bright A_StaffAttack(random[StaffAttack](18, 81), "StaffPuff2")
+		STAF D 1
+		STAF E 1 Bright
+		STAF F 1
+		STAF G 1 Bright
+		TNT1 A 8
+		STAF G 1 Bright
+		STAF F 1
+		STAF E 1 Bright
+		STAF D 1
+		STAF C 1 Bright
+		STAF B 1
+		STAF A 1 Bright
+		STAF A 1 A_ReFire
+		Goto Ready
+	}
+}

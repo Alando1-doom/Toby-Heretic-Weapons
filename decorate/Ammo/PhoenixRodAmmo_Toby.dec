@@ -1,0 +1,30 @@
+// Phoenix Rod Ammo
+
+ACTOR PhoenixRodAmmo_Toby : CustomInventory replaces PhoenixRodAmmo
+{
+	Inventory.PickupSound "weapons/fireammo_pkup"
+	Inventory.PickupMessage "$TXT_AMMOPHOENIXROD1"
+	Inventory.PickupFlash "InfernoSmall_ID"
+States
+	{
+	Spawn:
+		AMP1 A 3 Bright A_SpawnItemEx("AmmoPickupChecker_InfernoSmall", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		AMP1 BC 3 Bright
+		AMP1 ABC 3 Bright
+		AMP1 ABC 3 Bright
+		AMP1 ABC 3 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
+		TNT1 A 1 A_JumpIfInventory("PhoenixRodAmmo", 20, "NoPickup")
+		TNT1 A 1 A_GiveInventory("PhoenixRodAmmo", 1)
+		Stop
+	HasBP:
+		TNT1 A 1 A_JumpIfInventory("PhoenixRodAmmo", 40, "NoPickup")
+		TNT1 A 1 A_GiveInventory("PhoenixRodAmmo", 1)
+		Stop
+	NoPickup:
+		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+		Fail
+	}
+}

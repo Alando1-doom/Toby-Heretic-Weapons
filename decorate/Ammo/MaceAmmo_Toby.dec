@@ -1,0 +1,27 @@
+// Fire Mace Ammo
+
+ACTOR MaceAmmo_Toby : CustomInventory replaces MaceAmmo
+{
+	Inventory.PickupSound "weapons/maceammo_pkup"
+	Inventory.PickupMessage "$TXT_AMMOMACE1"
+	Inventory.PickupFlash "SmallBallsOfSteel_ID"
+States
+	{
+	Spawn:
+		AMM1 A 1 Bright A_SpawnItemEx("AmmoPickupChecker_SmallBallsOfSteel", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		AMM1 A 29 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
+		TNT1 A 1 A_JumpIfInventory("MaceAmmo", 150, "NoPickup")
+		TNT1 A 1 A_GiveInventory("MaceAmmo", 20)
+		Stop
+	HasBP:
+		TNT1 A 1 A_JumpIfInventory("MaceAmmo", 300, "NoPickup")
+		TNT1 A 1 A_GiveInventory("MaceAmmo", 20)
+		Stop
+	NoPickup:
+		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+		Fail
+	}
+}

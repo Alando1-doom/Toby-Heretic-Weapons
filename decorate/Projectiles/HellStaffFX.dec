@@ -1,0 +1,6 @@
+ACTOR HornRodFX1_Toby : HornRodFX1 replaces HornRodFX1
+{
+	Speed 25
+	+THRUGHOST
+	Decal HornyRainMaker
+}

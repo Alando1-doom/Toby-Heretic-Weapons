@@ -1,0 +1,28 @@
+ACTOR CrossbowHefty_Toby : CustomInventory replaces CrossbowHefty
+{
+	Inventory.PickupSound "weapons/quiver_pkup"
+	Inventory.PickupMessage "$TXT_AMMOCROSSBOW2"
+	Inventory.PickupFlash "Quiver_ID"
+States
+	{
+	Spawn:
+		AMC2 A 3 Bright A_SpawnItemEx("AmmoPickupChecker_Quiver", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		AMC2 BC 3 Bright
+		AMC2 ABC 3 Bright
+		AMC2 ABC 3 Bright
+		AMC2 ABC 3 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
+		TNT1 A 1 A_JumpIfInventory("CrossbowAmmo", 50, "NoPickup")
+		TNT1 A 1 A_GiveInventory("CrossbowAmmo", 20)
+		Stop
+	HasBP:
+		TNT1 A 1 A_JumpIfInventory("CrossbowAmmo", 100, "NoPickup")
+		TNT1 A 1 A_GiveInventory("CrossbowAmmo", 20)
+		Stop
+	NoPickup:
+		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+		Fail
+	}
+}

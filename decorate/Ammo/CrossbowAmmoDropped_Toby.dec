@@ -1,0 +1,25 @@
+ACTOR CrossbowAmmoDropped_Toby : CustomInventory //Dropped by the Undead Warrior and Weredragon
+{
+	Inventory.PickupSound "weapons/arrows_pkup"
+	Inventory.PickupMessage "$TXT_AMMOCROSSBOW1"
+	Inventory.PickupFlash "Arrows_ID"
+States
+	{
+	Spawn:
+		AMC1 A 1 Bright A_SpawnItemEx("AmmoPickupChecker_Arrows", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		AMC1 A 29 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
+		TNT1 A 1 A_JumpIfInventory("CrossbowAmmo", 50, "NoPickup")
+		TNT1 A 1 A_GiveInventory("CrossbowAmmo", 3)
+		Stop
+	HasBP:
+		TNT1 A 1 A_JumpIfInventory("CrossbowAmmo", 100, "NoPickup")
+		TNT1 A 1 A_GiveInventory("CrossbowAmmo", 3)
+		Stop
+	NoPickup:
+		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+		Fail
+	}
+}

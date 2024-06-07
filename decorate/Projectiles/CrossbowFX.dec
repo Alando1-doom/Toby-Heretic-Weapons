@@ -1,0 +1,93 @@
+Actor CBowPuff2 : BulletPuff
+{
+  RenderStyle Add
+  Alpha 0.95
+  Scale 0.40
+  //SeeSound "bullet/bounce"
+  //AttackSound "bullet/bounce"
+  //MeleeSound "bullet/bounce"
+states
+  {
+  Spawn:
+    FX03 CDE 6 Bright
+  Melee:
+    TNT1 A 0
+    stop
+  }
+}
+
+ACTOR CBowPuff : BulletPuff
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+PUFFONACTORS
+	RenderStyle Add
+	SeeSound "weapons/bowhit"
+    AttackSound "weapons/bowhit"
+    MeleeSound "weapons/bowhit"
+	States
+	{
+	Crash:
+		FX03 CDEFG 4 BRIGHT
+		Stop
+	Spawn:
+		FX03 HIJ 4 BRIGHT
+		Stop
+	}
+}
+
+Actor CBowShot1 : FastProjectile
+{
+  Radius 4
+  Height 8
+  Speed 75
+  Damage 5
+  Projectile
+  +THRUGHOST
+  RenderStyle Add
+  Alpha 0.9
+  Scale 1.0
+  DeathSound "weapons/bowhit"
+  //MissileType "CrossbowFX4"
+  //MissileHeight 8
+  Decal CrossbowScorch
+  States
+  {
+  Spawn:
+    FX03 A 1 Bright A_SpawnItemEx("CrossbowFX4", random2[BoltSpark]()*0.015625, random2[BoltSpark]()*0.015625, 0, 0,0,0,0,SXF_ABSOLUTEPOSITION, 50)
+    Loop
+  Death:    
+    FX03 C 0 Bright A_ChangeFlag("NODAMAGETHRUST", 0)
+    //FX03 C 0 Bright A_Explode(64, 64, 0)
+    FX03 CDE 4 Bright A_FadeOut(0.1)
+    Stop
+  }
+}
+
+Actor CBowShot2 : FastProjectile
+{
+  Radius 4
+  Height 8
+  Speed 75
+  Damage 8
+  Projectile
+  +THRUGHOST
+  RenderStyle Add
+  Alpha 0.9
+  Scale 1.0
+  DeathSound "weapons/bowhit"
+  //MissileType "CrossbowFX4"
+  //MissileHeight 8
+  Decal CrossbowScorch
+  States
+  {
+  Spawn:
+    FX03 B 1 Bright A_SpawnItemEx("CrossbowFX4", random2[BoltSpark]()*0.015625, random2[BoltSpark]()*0.015625, 0, 0,0,0,0,SXF_ABSOLUTEPOSITION, 50)
+    Loop
+  Death:    
+    FX03 C 0 Bright //A_ChangeFlag("NODAMAGETHRUST", 0)
+    //FX03 C 0 Bright A_Explode(64, 64, 0)
+    FX03 CHIJ 4 Bright A_FadeOut(0.1)
+    Stop
+  }
+}
