@@ -82,6 +82,7 @@
 #include decorate/Player/HereticPlayer.dec
 
 //Projectiles Directory
+#include decorate/Projectiles/GoldWandFX.dec
 #include decorate/Projectiles/CrossbowFX.dec
 #include decorate/Projectiles/HellStaffFX.dec
 #include decorate/Projectiles/PhoenixRodFX.dec

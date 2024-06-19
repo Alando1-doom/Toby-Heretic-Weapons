@@ -1,0 +1,41 @@
+ACTOR GoldWandFX1_Toby : GoldWandFX1 replaces GoldWandFX1
+{
+	Game Heretic
+	SpawnID 151
+	Radius 10
+	Height 6
+	Speed 22
+	Damage 2
+	Projectile
+	+THRUGHOST
+	RenderStyle Add
+	DeathSound "weapons/wandhit"
+	Obituary "$OB_MPPGOLDWAND"
+	Decal HImpScorch1
+	States
+	{
+	Spawn:
+		FX01 AB 6 BRIGHT
+		Loop
+	Death:
+		FX01 EFGH 3 BRIGHT
+		Stop
+	}
+}
+
+ACTOR GoldWandFX2_Toby : GoldWandFX1_Toby replaces GoldWandFX2
+{
+	Game Heretic
+	SpawnID 152
+	Speed 18
+	Damage 1
+	+THRUGHOST
+	DeathSound ""
+	Decal HImpScorch1
+	States
+	{
+	Spawn:
+		FX01 CD 6 BRIGHT
+		Loop
+	}
+}
