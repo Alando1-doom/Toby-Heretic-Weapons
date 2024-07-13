@@ -19,15 +19,9 @@ ACTOR Corvus_Toby : PlayerPawn
 	Player.WeaponSlot 7, FireMace_Toby
 	Player.ColorRange 225, 240
 	Player.Colorset 0, "Green",			225, 240,  238
-	Player.Colorset 1, "Yellow",		114, 129,  127
-	Player.Colorset 2, "Red",			145, 160,  158
-	Player.Colorset 3, "Blue",			190, 205,  203
-	Player.Colorset 4, "Brown",			 67,  82,   80
-	Player.Colorset 5, "Light Gray",	  9,  24,   22
-	Player.Colorset 6, "Light Brown",	 74,  89,   87
-	Player.Colorset 7, "Light Red",		150, 165,  163
-	Player.Colorset 8, "Light Blue",	192, 207,  205
-	Player.Colorset 9, "Beige",			 95, 110,  108
+	Player.Colorset 1, "Red",			145, 160,  158
+	Player.Colorset 2, "Blue",			190, 205,  203
+	Player.Colorset 3, "Tan",			 67,  82,   80
 	States
 	{
 	Spawn:
