@@ -8,8 +8,11 @@ ACTOR PhoenixRod_Toby : PhoenixRod replaces PhoenixRod
 	States
 	{
 	Spawn:
-		WPHX A 1 A_SpawnItemEx("WeaponPickupChecker_PhoenixRod", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WPHX A 34
+		WPHX AAAA 4 A_RadiusGive("GunChecker_PhoenixRod", 76, RGF_PLAYERS, 1)
+		WPHX A 1 A_RadiusGive("GunChecker_PhoenixRod", 76, RGF_PLAYERS, 1)
+		WPHX A 0 A_SpawnItemEx("WeaponPickupChecker_PhoenixRod", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WPHX A 1 A_RadiusGive("GunChecker_PhoenixRod", 76, RGF_PLAYERS, 1)
+		WPHX AAAA 4 A_RadiusGive("GunChecker_PhoenixRod", 76, RGF_PLAYERS, 1)
         Loop
 	Ready:
 		PHNX A 1 A_WeaponReady

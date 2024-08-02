@@ -9,8 +9,11 @@ ACTOR DragonClaw_Toby : Blaster replaces Blaster
 	States
 	{
 	Spawn:
-		WBLS A 1 A_SpawnItemEx("WeaponPickupChecker_DragonClaw", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WBLS A 34
+		WBLS AAAA 4 A_RadiusGive("GunChecker_DragonClaw", 76, RGF_PLAYERS, 1)
+		WBLS A 1 A_RadiusGive("GunChecker_DragonClaw", 76, RGF_PLAYERS, 1)
+		WBLS A 0 A_SpawnItemEx("WeaponPickupChecker_DragonClaw", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WBLS A 1 A_RadiusGive("GunChecker_DragonClaw", 76, RGF_PLAYERS, 1)
+		WBLS AAAA 4 A_RadiusGive("GunChecker_DragonClaw", 76, RGF_PLAYERS, 1)
         Loop
 	Ready:
 		BLSR A 1 A_WeaponReady
