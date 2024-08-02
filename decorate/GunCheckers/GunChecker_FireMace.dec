@@ -1,0 +1,28 @@
+Actor GunChecker_FireMace : CustomInventory
+{
+	Inventory.PickupMessage ""
+	Inventory.PickupSound ""
+	-COUNTITEM
+	States
+	{
+	Spawn:
+		TNT1 A -1
+		Stop
+	Pickup: //Checks for Weapon
+		TNT1 A 1 A_JumpIfInventory("FireMace_Toby", 1, "Check1")
+		Goto SayNothing
+	Check1: //Checks for Backpack and if ammo is full
+		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "Check2")
+		TNT1 A 1 A_JumpIfInventory("MaceAmmo", 150, "SayNothing")
+		Goto SaySomething
+	Check2: // If player possesses the Backpack & checks to see if ammo is full
+		TNT1 A 1 A_JumpIfInventory("MaceAmmo", 300, "SayNothing")
+		Goto SaySomething
+	SaySomething: //Plays Announcer
+		TNT1 A 1 A_PlaySoundEx("ann/firemace", "SoundSlot7", 0, -1)
+		Stop
+	SayNothing: //Silence
+		TNT1 A 1
+		Stop
+	}
+}

@@ -8,8 +8,11 @@ ACTOR FireMace_Toby : Mace replaces Mace
 	States
 	{
 	Spawn:
-		WMCE A 1 A_SpawnItemEx("WeaponPickupChecker_Mace", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WMCE A 34
+		WMCE AAAA 4 A_RadiusGive("GunChecker_FireMace", 76, RGF_PLAYERS, 1)
+		WMCE A 1 A_RadiusGive("GunChecker_FireMace", 76, RGF_PLAYERS, 1)
+		WMCE A 0 A_SpawnItemEx("WeaponPickupChecker_Mace", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WMCE A 1 A_RadiusGive("GunChecker_FireMace", 76, RGF_PLAYERS, 1)
+		WMCE AAAA 4 A_RadiusGive("GunChecker_FireMace", 76, RGF_PLAYERS, 1)
         Loop
 	Ready:
 		MACE A 1 A_WeaponReady

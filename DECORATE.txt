@@ -96,3 +96,10 @@
 #include decorate/Weapons/HellStaff_Toby.dec
 #include decorate/Weapons/PhoenixRod_Toby.dec
 #include decorate/Weapons/FireMace_Toby.dec
+
+//Gun Checkers
+#include "decorate/GunCheckers/GunChecker_Crossbow.dec"
+#include "decorate/GunCheckers/GunChecker_DragonClaw.dec"
+#include "decorate/GunCheckers/GunChecker_HellStaff.dec"
+#include "decorate/GunCheckers/GunChecker_PhoenixRod.dec"
+#include "decorate/GunCheckers/GunChecker_FireMace.dec"
