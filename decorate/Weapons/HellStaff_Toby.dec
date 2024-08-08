@@ -8,11 +8,11 @@ ACTOR HellStaff_Toby : SkullRod replaces SkullRod
 	States
 	{
 	Spawn:
-		WSKL AAAA 4 A_RadiusGive("GunChecker_HellStaff", 76, RGF_PLAYERS, 1)
-		WSKL A 1 A_RadiusGive("GunChecker_HellStaff", 76, RGF_PLAYERS, 1)
+		WSKL AAAA 4 A_RadiusGive("GunChecker_HellStaff", 96, RGF_PLAYERS, 1)
+		WSKL A 1 A_RadiusGive("GunChecker_HellStaff", 96, RGF_PLAYERS, 1)
 		WSKL A 0 A_SpawnItemEx("WeaponPickupChecker_HellStaff", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WSKL A 1 A_RadiusGive("GunChecker_HellStaff", 76, RGF_PLAYERS, 1)
-		WSKL AAAA 4 A_RadiusGive("GunChecker_HellStaff", 76, RGF_PLAYERS, 1)
+        WSKL A 1 A_RadiusGive("GunChecker_HellStaff", 96, RGF_PLAYERS, 1)
+		WSKL AAAA 4 A_RadiusGive("GunChecker_HellStaff", 96, RGF_PLAYERS, 1)
         Loop
 	Ready:
 		HROD A 1 A_WeaponReady
