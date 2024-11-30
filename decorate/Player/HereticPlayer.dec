@@ -28,16 +28,9 @@ ACTOR Corvus_Toby : PlayerPawn
 		PLAY A -1
 		Stop
 	See:
-		PLAY A 0 A_ThrowGrenade("WalkThing", -20, 1, 1)
         PLAY A 5
-        PLAY A 0 A_PlaySoundEx("player/footstep", "SoundSlot6", 0, 0)
-        PLAY B 0
         PLAY B 5
-        PLAY C 0
-        PLAY C 0 A_ThrowGrenade("WalkThing", -20, 1, 1)
         PLAY C 5
-        PLAY C 0 A_PlaySoundEx("player/footstep", "SoundSlot6", 0, 0)
-        PLAY D 0
         PLAY D 5
         Goto Spawn
 	Melee:
