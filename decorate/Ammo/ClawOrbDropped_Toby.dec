@@ -2,7 +2,6 @@ ACTOR ClawOrbDropped_Toby : CustomInventory //Dropped by Disciple and Ironlich
 {
 	Inventory.PickupSound "weapons/claworb_pkup"
 	Inventory.PickupMessage "$TXT_AMMOBLASTER1"
-	Inventory.PickupFlash "ClawOrb_ID"
 States
 	{
 	Spawn:
@@ -16,10 +15,12 @@ States
 		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
 		TNT1 A 1 A_JumpIfInventory("BlasterAmmo", 200, "NoPickup")
 		TNT1 A 1 A_GiveInventory("BlasterAmmo", 5)
+		TNT1 A 1 A_PlaySoundEx("ann/claworb", "SoundSlot7", 0, -1)
 		Stop
 	HasBP:
 		TNT1 A 1 A_JumpIfInventory("BlasterAmmo", 400, "NoPickup")
 		TNT1 A 1 A_GiveInventory("BlasterAmmo", 5)
+		TNT1 A 1 A_PlaySoundEx("ann/claworb", "SoundSlot7", 0, -1)
 		Stop
 	NoPickup:
 		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)

@@ -2,7 +2,6 @@ ACTOR GoldWandHefty_Toby : CustomInventory replaces GoldWandHefty
 {
 	Inventory.PickupSound "weapons/wandhefty_pkup"
 	Inventory.PickupMessage "$TXT_AMMOGOLDWAND2"
-	Inventory.PickupFlash "Geode_ID"
 States
 	{
 	Spawn:
@@ -11,15 +10,18 @@ States
 		AMG2 ABC 3 Bright
 		AMG2 ABC 3 Bright
 		AMG2 ABC 3 Bright
+		AMG2 ABC 3 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
 		TNT1 A 1 A_JumpIfInventory("GoldWandAmmo", 100, "NoPickup")
 		TNT1 A 1 A_GiveInventory("GoldWandAmmo", 50)
+		TNT1 A 1 A_PlaySoundEx("ann/geode", "SoundSlot7", 0, -1)
 		Stop
 	HasBP:
 		TNT1 A 1 A_JumpIfInventory("GoldWandAmmo", 200, "NoPickup")
 		TNT1 A 1 A_GiveInventory("GoldWandAmmo", 50)
+		TNT1 A 1 A_PlaySoundEx("ann/geode", "SoundSlot7", 0, -1)
 		Stop
 	NoPickup:
 		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)

@@ -1,4 +1,4 @@
-ACTOR PhoenixRod_Toby : PhoenixRod replaces PhoenixRod
+ACTOR PhoenixRod_Toby : PhoenixRod
 {
 	Game Heretic
 	Weapon.UpSound "weapons/phoenix_up"
@@ -8,11 +8,8 @@ ACTOR PhoenixRod_Toby : PhoenixRod replaces PhoenixRod
 	States
 	{
 	Spawn:
-		WPHX AAAA 4 A_RadiusGive("GunChecker_PhoenixRod", 96, RGF_PLAYERS, 1)
-		WPHX A 1 A_RadiusGive("GunChecker_PhoenixRod", 96, RGF_PLAYERS, 1)
-		WPHX A 0 A_SpawnItemEx("WeaponPickupChecker_PhoenixRod", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WPHX A 1 A_RadiusGive("GunChecker_PhoenixRod", 96, RGF_PLAYERS, 1)
-		WPHX AAAA 4 A_RadiusGive("GunChecker_PhoenixRod", 96, RGF_PLAYERS, 1)
+		WPHX A 1 A_SpawnItemEx("WeaponPickupChecker_PhoenixRod", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WPHX AA 25 
         Loop
 	Ready:
 		PHNX A 1 A_WeaponReady
@@ -52,4 +49,42 @@ ACTOR PhoenixRodPowered_Toby : PhoenixRodPowered
 		PHNX B 4 Bright A_ShutdownPhoenixPL2
 		Goto Ready
 	}
+}
+
+
+ACTOR PhoenixRod_Giver : CustomInventory replaces PhoenixRod
+{
+	Game Heretic
+	SpawnID 29
+    Inventory.PickupMessage "$TXT_WPNPHOENIxROD"
+	Inventory.RespawnTics 105
+	Inventory.PickupSound ""
+    States
+    {
+    Spawn:
+        WPHX A 1 A_SpawnItemEx("WeaponPickupChecker_PhoenixRod", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WPHX AA 25 
+        Loop
+    Pickup:
+		TNT1 A 1 A_JumpIfInventory("PhoenixRod_Toby", 1, "HasPhoenixRod")
+        TNT1 A 1 A_GiveInventory("PhoenixRod_Toby", 1)
+		TNT1 A 1 A_PlaySoundEx("weapons/phoenix_pkup", "Auto", 0, -1)
+        Stop
+	HasPhoenixRod:
+		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
+        TNT1 A 1 A_JumpIfInventory("PhoenixRodAmmo", 20, "NoPickup")
+        TNT1 A 1 A_GiveInventory("PhoenixRodAmmo", 2)
+		TNT1 A 1 A_PlaySoundEx("weapons/phoenix_pkup", "Auto", 0, -1)
+		TNT1 A 1 A_PlaySoundEx("ann/phoenix", "Auto", 0, -1)
+		Stop
+    HasBP:
+        TNT1 A 1 A_JumpIfInventory("PhoenixRodAmmo", 40, "NoPickup")
+        TNT1 A 1 A_GiveInventory("PhoenixRodAmmo", 2)
+		TNT1 A 1 A_PlaySoundEx("weapons/phoenix_pkup", "Auto", 0, -1)
+		TNT1 A 1 A_PlaySoundEx("ann/phoenix", "Auto", 0, -1)
+        Stop
+    NoPickup:
+        TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+        Fail
+    }
 }

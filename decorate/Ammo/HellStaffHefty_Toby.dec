@@ -2,7 +2,6 @@ ACTOR HellStaffHefty_Toby : CustomInventory replaces SkullRodHefty
 {
 	Inventory.PickupSound "weapons/runehefty_pkup"
 	Inventory.PickupMessage "$TXT_AMMOSKULLROD2"
-	Inventory.PickupFlash "GreaterRunes_ID"
 States
 	{
 	Spawn:
@@ -10,15 +9,19 @@ States
 		AMS2 B 5 Bright
 		AMS2 AB 5 Bright
 		AMS2 AB 5 Bright
+		AMS2 AB 5 Bright
+		AMS2 AB 5 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
 		TNT1 A 1 A_JumpIfInventory("SkullRodAmmo", 200, "NoPickup")
 		TNT1 A 1 A_GiveInventory("SkullRodAmmo", 100)
+		TNT1 A 1 A_PlaySoundEx("ann/greaterrunes", "SoundSlot7", 0, -1)
 		Stop
 	HasBP:
 		TNT1 A 1 A_JumpIfInventory("SkullRodAmmo", 400, "NoPickup")
 		TNT1 A 1 A_GiveInventory("SkullRodAmmo", 100)
+		TNT1 A 1 A_PlaySoundEx("ann/greaterrunes", "SoundSlot7", 0, -1)
 		Stop
 	NoPickup:
 		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)

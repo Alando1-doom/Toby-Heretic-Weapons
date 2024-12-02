@@ -9,12 +9,12 @@ weapons/bowhit			hrnhit
 weapons/phoenixshoot		phosht
 weapons/phoenixhit2		phohit2
 
-weapons/gauntlet_pkup			gaunpck
-weapons/cbow_pkup				cbowpck
-weapons/dragonclaw_pkup	drgnpck
-weapons/hellstaff_pkup			hstfpck
-weapons/phoenix_pkup			phnxpck
-weapons/mace_pkup				macepck
+weapons/gauntlet_pkup			weapn02
+weapons/cbow_pkup				weapn01
+weapons/dragonclaw_pkup	weapn01
+weapons/hellstaff_pkup			weapn02
+weapons/phoenix_pkup			getphrod
+weapons/mace_pkup				weapn03
 
 weapons/staff_up				staffup
 weapons/wand_up				wandup
@@ -86,6 +86,12 @@ ann/bagofholding	annbag
 
 stat/full		dsfull
 
+ann/gauntlets			anngaun
+ann/crossbow			annxbow
+ann/dragonclaw		anndrgn
+ann/hellstaff				annhstaf
+ann/phoenix				annphnx
+ann/firemace			annmace
 ann/crystal				anncryst
 ann/geode				anngeode
 ann/arrows				annarrow

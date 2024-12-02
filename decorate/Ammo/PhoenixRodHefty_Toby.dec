@@ -2,7 +2,6 @@ ACTOR PhoenixRodHefty_Toby : CustomInventory replaces PhoenixRodHefty
 {
 	Inventory.PickupSound "weapons/firehefty_pkup"
 	Inventory.PickupMessage "$TXT_AMMOPHOENIXROD2"
-	Inventory.PickupFlash "InfernoBig_ID"
 States
 	{
 	Spawn:
@@ -11,15 +10,18 @@ States
 		AMP2 ABC 3 Bright
 		AMP2 ABC 3 Bright
 		AMP2 ABC 3 Bright
+		AMP2 ABC 3 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
 		TNT1 A 1 A_JumpIfInventory("PhoenixRodAmmo", 20, "NoPickup")
 		TNT1 A 1 A_GiveInventory("PhoenixRodAmmo", 10)
+		TNT1 A 1 A_PlaySoundEx("ann/firebig", "SoundSlot7", 0, -1)
 		Stop
 	HasBP:
 		TNT1 A 1 A_JumpIfInventory("PhoenixRodAmmo", 40, "NoPickup")
 		TNT1 A 1 A_GiveInventory("PhoenixRodAmmo", 10)
+		TNT1 A 1 A_PlaySoundEx("ann/firebig", "SoundSlot7", 0, -1)
 		Stop
 	NoPickup:
 		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)

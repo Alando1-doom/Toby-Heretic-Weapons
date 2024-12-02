@@ -1,4 +1,4 @@
-ACTOR DragonClaw_Toby : Blaster replaces Blaster
+ACTOR DragonClaw_Toby : Blaster
 {
 	Game Heretic
 	Weapon.UpSound "weapons/dragonclaw_up"
@@ -9,11 +9,8 @@ ACTOR DragonClaw_Toby : Blaster replaces Blaster
 	States
 	{
 	Spawn:
-		WBLS AAAA 4 A_RadiusGive("GunChecker_DragonClaw", 96, RGF_PLAYERS, 1)
-		WBLS A 1 A_RadiusGive("GunChecker_DragonClaw", 96, RGF_PLAYERS, 1)
-		WBLS A 0 A_SpawnItemEx("WeaponPickupChecker_DragonClaw", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WBLS A 1 A_RadiusGive("GunChecker_DragonClaw", 96, RGF_PLAYERS, 1)
-		WBLS AAAA 4 A_RadiusGive("GunChecker_DragonClaw", 96, RGF_PLAYERS, 1)
+		WBLS A 1 A_SpawnItemEx("WeaponPickupChecker_DragonClaw", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WBLS AA 25 
         Loop
 	Ready:
 		BLSR A 1 A_WeaponReady
@@ -55,4 +52,41 @@ ACTOR DragonClawPowered_Toby : BlasterPowered
 		BLSR A 0 A_ReFire
 		Goto Ready
 	}
+}
+
+ACTOR DragonClaw_Giver : CustomInventory replaces Blaster
+{
+	Game Heretic
+	SpawnID 28
+    Inventory.PickupMessage "$TXT_WPNBLASTER"
+	Inventory.RespawnTics 105
+	Inventory.PickupSound ""
+    States
+    {
+    Spawn:
+        WBLS A 1 A_SpawnItemEx("WeaponPickupChecker_DragonClaw", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WBLS AA 25 
+        Loop
+    Pickup:
+		TNT1 A 1 A_JumpIfInventory("DragonClaw_Toby", 1, "HasDragonClaw")
+        TNT1 A 1 A_GiveInventory("DragonClaw_Toby", 1)
+		TNT1 A 1 A_PlaySoundEx("weapons/dragonclaw_pkup", "Auto", 0, -1)
+        Stop
+	HasDragonClaw:
+		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
+        TNT1 A 1 A_JumpIfInventory("BlasterAmmo", 200, "NoPickup")
+        TNT1 A 1 A_GiveInventory("BlasterAmmo", 30)
+		TNT1 A 1 A_PlaySoundEx("weapons/dragonclaw_pkup", "Auto", 0, -1)
+		TNT1 A 1 A_PlaySoundEx("ann/dragonclaw", "Auto", 0, -1)
+		Stop
+    HasBP:
+        TNT1 A 1 A_JumpIfInventory("BlasterAmmo", 400, "NoPickup")
+        TNT1 A 1 A_GiveInventory("BlasterAmmo", 30)
+		TNT1 A 1 A_PlaySoundEx("weapons/dragonclaw_pkup", "Auto", 0, -1)
+		TNT1 A 1 A_PlaySoundEx("ann/dragonclaw", "Auto", 0, -1)
+        Stop
+    NoPickup:
+        TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+        Fail
+    }
 }
