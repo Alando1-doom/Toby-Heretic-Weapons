@@ -16,40 +16,6 @@
 #include decorate/Ammo/PhoenixRodAmmo_Toby.dec
 #include decorate/Ammo/PhoenixRodHefty_Toby.dec
 
-//Announcers Directory
-//Ammo Announcer
-#include decorate/Announcers/AmmoAnnouncers/CrystalAnn.dec
-#include decorate/Announcers/AmmoAnnouncers/GeodeAnn.dec
-#include decorate/Announcers/AmmoAnnouncers/ClawOrbAnn.dec
-#include decorate/Announcers/AmmoAnnouncers/EnergyOrbAnn.dec
-#include decorate/Announcers/AmmoAnnouncers/ArrowsAnn.dec
-#include decorate/Announcers/AmmoAnnouncers/QuiverAnn.dec
-#include decorate/Announcers/AmmoAnnouncers/InfernoSmallAnn.dec
-#include decorate/Announcers/AmmoAnnouncers/InfernoBigAnn.dec
-#include decorate/Announcers/AmmoAnnouncers/LesserRunesAnn.dec
-#include decorate/Announcers/AmmoAnnouncers/GreaterRunesAnn.dec
-#include decorate/Announcers/AmmoAnnouncers/SmallBallsAnn.dec
-#include decorate/Announcers/AmmoAnnouncers/BigBallsAnn.dec
-//Pickup Announcer
-#include decorate/Announcers/PickupAnnouncers/BPackAnn.dec
-
-//Flashes Directory
-//Ammo Flashes
-#include decorate/Flashes/AmmoFlashes/Crystal_ID.dec
-#include decorate/Flashes/AmmoFlashes/Geode_ID.dec
-#include decorate/Flashes/AmmoFlashes/ClawOrb_ID.dec
-#include decorate/Flashes/AmmoFlashes/EnergyOrb_ID.dec
-#include decorate/Flashes/AmmoFlashes/Arrows_ID.dec
-#include decorate/Flashes/AmmoFlashes/Quiver_ID.dec
-#include decorate/Flashes/AmmoFlashes/InfernoSmall_ID.dec
-#include decorate/Flashes/AmmoFlashes/InfernoBig_ID.dec
-#include decorate/Flashes/AmmoFlashes/LesserRunes_ID.dec
-#include decorate/Flashes/AmmoFlashes/GreaterRunes_ID.dec
-#include decorate/Flashes/AmmoFlashes/SmallBallsOfSteel_ID.dec
-#include decorate/Flashes/AmmoFlashes/BigBallsOfSteel_ID.dec
-//Pickup Flashes
-#include decorate/Flashes/PickupFlashes/BPack_ID.dec
-
 //Pickup Checkers Directory
 //Ammo Checkers
 #include decorate/PickupCheckers/AmmoCheckers/WandCrystalChecker.dec
@@ -96,10 +62,3 @@
 #include decorate/Weapons/HellStaff_Toby.dec
 #include decorate/Weapons/PhoenixRod_Toby.dec
 #include decorate/Weapons/FireMace_Toby.dec
-
-//Gun Checkers
-#include "decorate/GunCheckers/GunChecker_Crossbow.dec"
-#include "decorate/GunCheckers/GunChecker_DragonClaw.dec"
-#include "decorate/GunCheckers/GunChecker_HellStaff.dec"
-#include "decorate/GunCheckers/GunChecker_PhoenixRod.dec"
-#include "decorate/GunCheckers/GunChecker_FireMace.dec"

@@ -4,21 +4,22 @@ ACTOR CrossbowAmmo_Toby : CustomInventory replaces CrossbowAmmo
 {
 	Inventory.PickupSound "weapons/arrows_pkup"
 	Inventory.PickupMessage "$TXT_AMMOCROSSBOW1"
-	Inventory.PickupFlash "Arrows_ID"
 States
 	{
 	Spawn:
 		AMC1 A 1 Bright A_SpawnItemEx("AmmoPickupChecker_Arrows", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		AMC1 A 29 Bright
+		AMC1 AA 25 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
 		TNT1 A 1 A_JumpIfInventory("CrossbowAmmo", 50, "NoPickup")
 		TNT1 A 1 A_GiveInventory("CrossbowAmmo", 5)
+		TNT1 A 1 A_PlaySoundEx("ann/arrows", "SoundSlot7", 0, -1)
 		Stop
 	HasBP:
 		TNT1 A 1 A_JumpIfInventory("CrossbowAmmo", 100, "NoPickup")
 		TNT1 A 1 A_GiveInventory("CrossbowAmmo", 5)
+		TNT1 A 1 A_PlaySoundEx("ann/arrows", "SoundSlot7", 0, -1)
 		Stop
 	NoPickup:
 		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)

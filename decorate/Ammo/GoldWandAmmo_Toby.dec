@@ -4,21 +4,22 @@ ACTOR GoldWandAmmo_Toby : CustomInventory replaces GoldWandAmmo
 {
 	Inventory.PickupMessage "$TXT_AMMOGOLDWAND1"
 	Inventory.PickupSound "weapons/wandammo_pkup"
-	Inventory.PickupFlash "Crystal_ID"
 States
 	{
 	Spawn:
 		AMG1 A 1 Bright A_SpawnItemEx("AmmoPickupChecker_Crystal", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		AMG1 A 29 Bright
+		AMG1 AA 25 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
 		TNT1 A 1 A_JumpIfInventory("GoldWandAmmo", 100, "NoPickup")
 		TNT1 A 1 A_GiveInventory("GoldWandAmmo", 10)
+		TNT1 A 1 A_PlaySoundEx("ann/crystal", "SoundSlot7", 0, -1)
 		Stop
 	HasBP:
 		TNT1 A 1 A_JumpIfInventory("GoldWandAmmo", 200, "NoPickup")
 		TNT1 A 1 A_GiveInventory("GoldWandAmmo", 10)
+		TNT1 A 1 A_PlaySoundEx("ann/crystal", "SoundSlot7", 0, -1)
 		Stop
 	NoPickup:
 		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
