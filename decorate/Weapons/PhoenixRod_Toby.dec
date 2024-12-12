@@ -9,7 +9,7 @@ ACTOR PhoenixRod_Toby : PhoenixRod
 	{
 	Spawn:
 		WPHX A 1 A_SpawnItemEx("WeaponPickupChecker_PhoenixRod", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WPHX AA 25 
+        WPHX AA 18
         Loop
 	Ready:
 		PHNX A 1 A_WeaponReady
@@ -63,7 +63,7 @@ ACTOR PhoenixRod_Giver : CustomInventory replaces PhoenixRod
     {
     Spawn:
         WPHX A 1 A_SpawnItemEx("WeaponPickupChecker_PhoenixRod", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WPHX AA 25 
+        WPHX AA 18
         Loop
     Pickup:
 		TNT1 A 1 A_JumpIfInventory("PhoenixRod_Toby", 1, "HasPhoenixRod")

@@ -9,7 +9,7 @@ ACTOR HellStaff_Toby : SkullRod
 	{
 	Spawn:
 		WSKL A 1 A_SpawnItemEx("WeaponPickupChecker_HellStaff", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WSKL AA 25 
+        WSKL AA 20
         Loop
 	Ready:
 		HROD A 1 A_WeaponReady
@@ -65,7 +65,7 @@ ACTOR HellStaff_Giver : CustomInventory replaces SkullRod
     {
     Spawn:
         WSKL A 1 A_SpawnItemEx("WeaponPickupChecker_HellStaff", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WSKL AA 25 
+        WSKL AA 20
         Loop
     Pickup:
 		TNT1 A 1 A_JumpIfInventory("HellStaff_Toby", 1, "HasHellStaff")

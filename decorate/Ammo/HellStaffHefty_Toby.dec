@@ -10,7 +10,6 @@ States
 		AMS2 AB 5 Bright
 		AMS2 AB 5 Bright
 		AMS2 AB 5 Bright
-		AMS2 AB 5 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")

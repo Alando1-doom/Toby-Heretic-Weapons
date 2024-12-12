@@ -8,7 +8,7 @@ States
 	{
 	Spawn:
 		AMG1 A 1 Bright A_SpawnItemEx("AmmoPickupChecker_Crystal", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		AMG1 AA 25 Bright
+		AMG1 AA 18 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
