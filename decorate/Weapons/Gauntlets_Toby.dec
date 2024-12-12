@@ -7,7 +7,7 @@ ACTOR Gauntlets_Toby : Gauntlets replaces Gauntlets
 	{
 	Spawn:
 		WGNT A 1 A_SpawnItemEx("WeaponPickupChecker_Gauntlets", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WGNT AA 25
+        WGNT AA 18
         Loop
 	Ready:
 		GAUN A 1 A_WeaponReady

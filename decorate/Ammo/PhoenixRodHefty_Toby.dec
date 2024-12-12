@@ -5,12 +5,14 @@ ACTOR PhoenixRodHefty_Toby : CustomInventory replaces PhoenixRodHefty
 States
 	{
 	Spawn:
-		AMP2 A 3 Bright A_SpawnItemEx("AmmoPickupChecker_InfernoBig", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		AMP2 BC 3 Bright
-		AMP2 ABC 3 Bright
-		AMP2 ABC 3 Bright
-		AMP2 ABC 3 Bright
-		AMP2 ABC 3 Bright
+		AMP2 A 2 Bright A_SpawnItemEx("AmmoPickupChecker_InfernoBig", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		AMP2 BC 2 Bright
+		AMP2 ABC 2 Bright
+		AMP2 ABC 2 Bright
+		AMP2 ABC 2 Bright
+		AMP2 ABC 2 Bright
+		AMP2 ABC 2 Bright
+		AMP2 ABC 2 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("BagOfHolding_Toby", 1, "HasBP")
