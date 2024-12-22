@@ -9,7 +9,7 @@ ACTOR BagOfHolding_Toby : BackpackItem
 	{
 	Spawn:
 		BAGH A 1 A_SpawnItemEx("BPackPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		BAGH A 29
+		BAGH A 34
 		Loop
 	}
 }
@@ -27,7 +27,7 @@ ACTOR BagOfHolding_Giver : CustomInventory replaces BagOfHolding
     {
     Spawn:
         BAGH A 1 A_SpawnItemEx("BPackPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        BAGH AA 18
+        BAGH AA 17
         Loop
     Pickup:
         TNT1 A 1 A_GiveInventory("BagOfHolding_Toby", 1)

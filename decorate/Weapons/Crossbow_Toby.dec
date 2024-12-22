@@ -13,7 +13,7 @@ ACTOR Crossbow_Toby : Crossbow
 	{
 	Spawn:
 		WBOW A 1 A_SpawnItemEx("WeaponPickupChecker_Crossbow", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WBOW AA 18 
+        WBOW AA 18
         Loop
 	Ready:
 		CRBW AAAABBBBCCCC 1 A_WeaponReady
@@ -80,7 +80,7 @@ ACTOR Crossbow_Giver : CustomInventory replaces Crossbow
     {
     Spawn:
         WBOW A 1 A_SpawnItemEx("WeaponPickupChecker_Crossbow", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WBOW AA 18 
+        WBOW AA 18
         Loop
     Pickup:
 		TNT1 A 1 A_JumpIfInventory("Crossbow_Toby", 1, "HasCrossbow")

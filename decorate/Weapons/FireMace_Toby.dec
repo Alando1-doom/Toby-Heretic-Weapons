@@ -62,7 +62,7 @@ ACTOR FireMace_Giver : CustomInventory replaces Mace
     {
     Spawn:
         WMCE A 1 A_SpawnItemEx("WeaponPickupChecker_Mace", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WMCE AA 18 
+        WMCE AA 18
         Loop
     Pickup:
 		TNT1 A 1 A_JumpIfInventory("FireMace_Toby", 1, "HasMace")
