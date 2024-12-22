@@ -10,7 +10,7 @@ ACTOR DragonClaw_Toby : Blaster
 	{
 	Spawn:
 		WBLS A 1 A_SpawnItemEx("WeaponPickupChecker_DragonClaw", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WBLS AA 20
+        WBLS AA 19
         Loop
 	Ready:
 		BLSR A 1 A_WeaponReady
@@ -65,7 +65,7 @@ ACTOR DragonClaw_Giver : CustomInventory replaces Blaster
     {
     Spawn:
         WBLS A 1 A_SpawnItemEx("WeaponPickupChecker_DragonClaw", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WBLS AA 20
+        WBLS AA 19
         Loop
     Pickup:
 		TNT1 A 1 A_JumpIfInventory("DragonClaw_Toby", 1, "HasDragonClaw")
