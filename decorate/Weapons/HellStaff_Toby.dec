@@ -5,6 +5,7 @@ ACTOR HellStaff_Toby : SkullRod
 	Inventory.PickupSound "weapons/hellstaff_pkup"
 	Weapon.AmmoType1 "SkullRodAmmo"
 	Weapon.SisterWeapon "HellStaffPowered_Toby"
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:
@@ -31,6 +32,7 @@ ACTOR HellStaffPowered_Toby : SkullRodPowered
 {
 	Game Heretic
 	+WEAPON.POWERED_UP
+	+WEAPON.CHEATNOTWEAPON
 	Weapon.UpSound "weapons/hellstaff_up"
 	Weapon.AmmoType1 "SkullRodAmmo"
 	Weapon.SisterWeapon "HellStaff_Toby"

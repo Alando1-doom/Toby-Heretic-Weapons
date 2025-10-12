@@ -62,3 +62,6 @@
 #include decorate/Weapons/HellStaff_Toby.dec
 #include decorate/Weapons/PhoenixRod_Toby.dec
 #include decorate/Weapons/FireMace_Toby.dec
+
+//IDKFA Cheat
+#include decorate/DEC_IDKFA.dec

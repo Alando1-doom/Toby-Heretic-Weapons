@@ -9,6 +9,7 @@ ACTOR Crossbow_Toby : Crossbow
 	Weapon.AmmoType "CrossbowAmmo"
 	Weapon.SisterWeapon "CrossbowPowered_Toby"
 	Decal CrossbowScorch
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:
@@ -41,6 +42,7 @@ ACTOR CrossbowPowered_Toby : Crossbow_Toby
 {
 	Game Heretic
 	+WEAPON.POWERED_UP
+	+WEAPON.CHEATNOTWEAPON
 	Weapon.AmmoGive 0
 	Weapon.SisterWeapon "Crossbow_Toby"
 	Tag "$TAG_CROSSBOWP"

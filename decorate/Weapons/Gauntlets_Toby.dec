@@ -3,6 +3,7 @@ ACTOR Gauntlets_Toby : Gauntlets replaces Gauntlets
 	Game Heretic
 	Inventory.PickupSound "weapons/gauntlet_pkup"
 	Weapon.SisterWeapon "GauntletsPowered_Toby"
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:
@@ -34,6 +35,7 @@ ACTOR GauntletsPowered_Toby : GauntletsPowered
 {
 	Game Heretic
 	+POWERED_UP
+	+WEAPON.CHEATNOTWEAPON
 	Tag "$TAG_GAUNTLETSP"
 	Obituary "$OB_MPPGAUNTLETS"
 	Weapon.SisterWeapon "Gauntlets_Toby"

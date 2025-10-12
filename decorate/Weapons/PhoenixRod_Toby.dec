@@ -5,6 +5,7 @@ ACTOR PhoenixRod_Toby : PhoenixRod
 	Inventory.PickupSound "weapons/phoenix_pkup"
 	Weapon.AmmoType "PhoenixRodAmmo"
 	Weapon.Sisterweapon "PhoenixRodPowered_Toby"
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:
@@ -34,6 +35,7 @@ ACTOR PhoenixRodPowered_Toby : PhoenixRodPowered
 	Game Heretic
 	+WEAPON.POWERED_UP
 	+WEAPON.MELEEWEAPON
+	+WEAPON.CHEATNOTWEAPON
 	Weapon.UpSound "weapons/phoenix_up"
 	Weapon.AmmoType "PhoenixRodAmmo"
 	Weapon.SisterWeapon "PhoenixRod_Toby"

@@ -6,6 +6,7 @@ ACTOR DragonClaw_Toby : Blaster
 	Weapon.AmmoType "BlasterAmmo"
 	Weapon.SisterWeapon "DragonClawPowered_Toby"
 	Decal RailScorch
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:
@@ -35,6 +36,7 @@ ACTOR DragonClawPowered_Toby : BlasterPowered
 {
 	Game Heretic
 	+WEAPON.POWERED_UP
+	+WEAPON.CHEATNOTWEAPON
 	Weapon.UpSound "weapons/dragonclaw_up"
 	Weapon.AmmoType "BlasterAmmo"
 	Weapon.SisterWeapon "DragonClaw_Toby"

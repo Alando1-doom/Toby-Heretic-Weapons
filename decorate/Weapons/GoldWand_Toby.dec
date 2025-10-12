@@ -5,6 +5,7 @@ ACTOR GoldWand_Toby : GoldWand replaces GoldWand
 	Weapon.AmmoType "GoldWandAmmo"
 	Weapon.SisterWeapon "GoldWandPowered_Toby"
 	Decal HImpScorch1
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Ready:
@@ -32,6 +33,7 @@ ACTOR GoldWandPowered_Toby : GoldWandPowered
 	Weapon.AmmoType "GoldWandAmmo"
 	Weapon.SisterWeapon "GoldWand_Toby"
 	Decal HImpScorch1
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Fire:

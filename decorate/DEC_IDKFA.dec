@@ -1,0 +1,16 @@
+Actor IDKFA_ChooseGame : CheatGiverBase
+{
+	States
+	{
+	Pickup:
+		TNT1 A 1 A_GiveInventory("EnchantedShield")
+		TNT1 A 1 A_GiveInventory("BagOfHolding_Toby")
+		TNT1 A 1 A_GiveInventory("Gauntlets_Toby")
+		TNT1 A 1 A_GiveInventory("FireMace_Toby")
+		TNT1 A 1 A_GiveInventory("PhoenixRod_Toby")
+		TNT1 A 1 A_GiveInventory("HellStaff_Toby")
+		TNT1 A 1 A_GiveInventory("DragonClaw_Toby")
+		TNT1 A 1 A_GiveInventory("Crossbow_Toby")
+		Stop
+	}
+}

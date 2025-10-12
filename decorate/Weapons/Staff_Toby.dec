@@ -3,6 +3,7 @@ ACTOR Staff_Toby : Staff
 	Game Heretic
 	Weapon.UpSound "weapons/staff_up"
 	Weapon.sisterweapon "StaffPowered_Toby"
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Ready:	
@@ -35,6 +36,7 @@ ACTOR StaffPowered_Toby : StaffPowered
 	+WEAPON.POWERED_UP
 	+WEAPON.READYSNDHALF
 	+WEAPON.STAFF2_KICKBACK
+	+WEAPON.CHEATNOTWEAPON
 	Obituary "$OB_MPPSTAFF"
 	Tag "$TAG_STAFFP"
 	States

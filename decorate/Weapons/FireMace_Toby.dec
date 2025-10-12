@@ -5,6 +5,7 @@ ACTOR FireMace_Toby : Mace
 	Inventory.PickupSound "weapons/mace_pkup"
 	Weapon.AmmoType "MaceAmmo"
 	Weapon.SisterWeapon "FireMacePowered_Toby"
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:
@@ -34,6 +35,7 @@ ACTOR FireMacePowered_Toby : MacePowered
 {
 	Game Heretic
 	+WEAPON.POWERED_UP
+	+WEAPON.CHEATNOTWEAPON
 	Weapon.UpSound "weapons/mace_up"
 	Weapon.AmmoType "MaceAmmo"
 	Weapon.SisterWeapon "FireMace_Toby"
