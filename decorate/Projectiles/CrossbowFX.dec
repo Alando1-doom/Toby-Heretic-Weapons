@@ -54,9 +54,12 @@ Actor CBowShot1 : FastProjectile
   States
   {
   Spawn:
-    FX03 A 1 Bright A_SpawnItemEx("CrossbowFX4", random2[BoltSpark]()*0.015625, random2[BoltSpark]()*0.015625, 0, 0,0,0,0,SXF_ABSOLUTEPOSITION, 50)
+	FX03 A 1 Bright A_PlaySoundEx("projectiles/arrow", "Auto", 1, 0)
+    FX03 A 0 Bright A_SpawnItemEx("CrossbowFX4", random2[BoltSpark]()*0.015625, random2[BoltSpark]()*0.015625, 0, 0,0,0,0,SXF_ABSOLUTEPOSITION, 50)
     Loop
-  Death:    
+  Death:  
+	FX03 C 2 Bright A_StopSound
+	FX03 C 2 Bright A_PlaySoundEx("weapons/bowhit", "Auto", 0, 0)
     FX03 C 0 Bright A_ChangeFlag("NODAMAGETHRUST", 0)
     //FX03 C 0 Bright A_Explode(64, 64, 0)
     FX03 CDE 4 Bright A_FadeOut(0.1)
@@ -82,9 +85,12 @@ Actor CBowShot2 : FastProjectile
   States
   {
   Spawn:
-    FX03 B 1 Bright A_SpawnItemEx("CrossbowFX4", random2[BoltSpark]()*0.015625, random2[BoltSpark]()*0.015625, 0, 0,0,0,0,SXF_ABSOLUTEPOSITION, 50)
+	FX03 B 1 Bright A_PlaySoundEx("projectiles/arrow", "Auto", 1, 0)
+    FX03 B 0 Bright A_SpawnItemEx("CrossbowFX4", random2[BoltSpark]()*0.015625, random2[BoltSpark]()*0.015625, 0, 0,0,0,0,SXF_ABSOLUTEPOSITION, 50)
     Loop
-  Death:    
+  Death:
+	FX03 C 2 Bright A_StopSound
+	FX03 C 2 Bright A_PlaySoundEx("weapons/bowhit", "Auto", 0, 0)
     FX03 C 0 Bright //A_ChangeFlag("NODAMAGETHRUST", 0)
     //FX03 C 0 Bright A_Explode(64, 64, 0)
     FX03 CHIJ 4 Bright A_FadeOut(0.1)

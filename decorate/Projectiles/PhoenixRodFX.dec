@@ -2,4 +2,18 @@ ACTOR PhoenixFX1_Toby : PhoenixFX1 replaces PhoenixFX1
 {
 	DeathSound "weapons/phoenixhit2"
 	Decal Scorch
+		States
+	{
+	Spawn:
+		FX04 A 2 Bright A_PlaySoundEx("projectiles/phoenix", "Auto", 1, 0)
+		FX04 A 2 BRIGHT A_PhoenixPuff
+		Loop
+	Death:
+		FX08 A 1 Bright A_StopSound
+		FX08 A 1 BRIGHT A_Explode
+		FX08 A 1 Bright A_PlaySoundEx("weapons/phoenixhit2", "Auto", 0, 0)
+		FX08 BC 5 BRIGHT
+		FX08 DEFGH 4 BRIGHT
+		Stop
+	}
 }

@@ -2,6 +2,7 @@ ACTOR GoldWandHefty_Toby : CustomInventory replaces GoldWandHefty
 {
 	Inventory.PickupSound "weapons/wandhefty_pkup"
 	Inventory.PickupMessage "$TXT_AMMOGOLDWAND2"
+	Tag "Crystal Geode"
 States
 	{
 	Spawn:

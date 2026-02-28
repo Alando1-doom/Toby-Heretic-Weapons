@@ -2,6 +2,7 @@ ACTOR CrossbowHefty_Toby : CustomInventory replaces CrossbowHefty
 {
 	Inventory.PickupSound "weapons/quiver_pkup"
 	Inventory.PickupMessage "$TXT_AMMOCROSSBOW2"
+	Tag "Quiver of Arrows"
 States
 	{
 	Spawn:

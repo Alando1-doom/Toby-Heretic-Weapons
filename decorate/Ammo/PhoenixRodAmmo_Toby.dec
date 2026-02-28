@@ -4,6 +4,7 @@ ACTOR PhoenixRodAmmo_Toby : CustomInventory replaces PhoenixRodAmmo
 {
 	Inventory.PickupSound "weapons/fireammo_pkup"
 	Inventory.PickupMessage "$TXT_AMMOPHOENIXROD1"
+	Tag "Flame Orb"
 States
 	{
 	Spawn:

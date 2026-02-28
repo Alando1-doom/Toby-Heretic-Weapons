@@ -59,6 +59,7 @@ ACTOR PhoenixRod_Giver : CustomInventory replaces PhoenixRod
     Inventory.PickupMessage "$TXT_WPNPHOENIxROD"
 	Inventory.RespawnTics 105
 	Inventory.PickupSound ""
+	Tag "Phoenix Rod"
     States
     {
     Spawn:

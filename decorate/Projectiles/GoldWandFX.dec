@@ -15,10 +15,13 @@ ACTOR GoldWandFX1_Toby : GoldWandFX1 replaces GoldWandFX1
 	States
 	{
 	Spawn:
-		FX01 AB 6 BRIGHT
+		FX01 A 6 Bright 
+		FX01 B 6 BRIGHT
 		Loop
 	Death:
-		FX01 EFGH 3 BRIGHT
+		FX01 E 2 Bright A_StopSound
+		FX01 E 1 Bright A_PlaySoundEx("weapons/wandhit", "Auto", 0, 0)
+		FX01 FGH 3 BRIGHT
 		Stop
 	}
 }
@@ -35,7 +38,9 @@ ACTOR GoldWandFX2_Toby : GoldWandFX1_Toby replaces GoldWandFX2
 	States
 	{
 	Spawn:
-		FX01 CD 6 BRIGHT
+		FX01 C 1 Bright A_PlaySoundEx("projectiles/wand", "Auto", 1, 0)
+		FX01 C 5 Bright
+		FX01 D 6 BRIGHT
 		Loop
 	}
 }

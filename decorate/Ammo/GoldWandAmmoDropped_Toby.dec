@@ -2,6 +2,7 @@ ACTOR GoldWandAmmoDropped_Toby : CustomInventory //Dropped by the Golem
 {
 	Inventory.PickupMessage "$TXT_AMMOGOLDWAND1"
 	Inventory.PickupSound "weapons/wandammo_pkup"
+	Tag "Wand Crystal"
 States
 	{
 	Spawn:

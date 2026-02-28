@@ -2,6 +2,7 @@ ACTOR ClawOrbHefty_Toby : CustomInventory replaces BlasterHefty
 {
 	Inventory.PickupSound "weapons/clawhefty_pkup"
 	Inventory.PickupMessage "$TXT_AMMOBLASTER2"
+	Tag "Energy Orb"
 States
 	{
 	Spawn:

@@ -76,6 +76,7 @@ ACTOR Crossbow_Giver : CustomInventory replaces Crossbow
     Inventory.PickupMessage "$TXT_WPNCROSSBOW"
 	Inventory.RespawnTics 105
 	Inventory.PickupSound ""
+	Tag "Ethereal Crossbow"
     States
     {
     Spawn:

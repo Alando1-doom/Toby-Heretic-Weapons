@@ -2,6 +2,7 @@ ACTOR PhoenixRodHefty_Toby : CustomInventory replaces PhoenixRodHefty
 {
 	Inventory.PickupSound "weapons/firehefty_pkup"
 	Inventory.PickupMessage "$TXT_AMMOPHOENIXROD2"
+	Tag "Inferno Orb"
 States
 	{
 	Spawn:

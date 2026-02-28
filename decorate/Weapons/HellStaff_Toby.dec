@@ -61,6 +61,7 @@ ACTOR HellStaff_Giver : CustomInventory replaces SkullRod
     Inventory.PickupMessage "$TXT_WPNSKULLROD"
 	Inventory.RespawnTics 105
 	Inventory.PickupSound ""
+	Tag "Hell Staff"
     States
     {
     Spawn:

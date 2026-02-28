@@ -4,6 +4,7 @@ ACTOR GoldWandAmmo_Toby : CustomInventory replaces GoldWandAmmo
 {
 	Inventory.PickupMessage "$TXT_AMMOGOLDWAND1"
 	Inventory.PickupSound "weapons/wandammo_pkup"
+	Tag "Wand Crystal"
 States
 	{
 	Spawn:

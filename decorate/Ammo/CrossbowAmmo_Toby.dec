@@ -4,6 +4,7 @@ ACTOR CrossbowAmmo_Toby : CustomInventory replaces CrossbowAmmo
 {
 	Inventory.PickupSound "weapons/arrows_pkup"
 	Inventory.PickupMessage "$TXT_AMMOCROSSBOW1"
+	Tag "Arrows"
 States
 	{
 	Spawn:

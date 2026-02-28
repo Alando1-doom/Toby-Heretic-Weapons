@@ -2,6 +2,7 @@ ACTOR ClawOrbDropped_Toby : CustomInventory //Dropped by Disciple and Ironlich
 {
 	Inventory.PickupSound "weapons/claworb_pkup"
 	Inventory.PickupMessage "$TXT_AMMOBLASTER1"
+	Tag "Claw Orb"
 States
 	{
 	Spawn:
