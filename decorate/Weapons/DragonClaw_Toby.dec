@@ -61,6 +61,7 @@ ACTOR DragonClaw_Giver : CustomInventory replaces Blaster
     Inventory.PickupMessage "$TXT_WPNBLASTER"
 	Inventory.RespawnTics 105
 	Inventory.PickupSound ""
+	Tag "Dragon Claw"
     States
     {
     Spawn:

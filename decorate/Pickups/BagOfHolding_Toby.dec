@@ -23,6 +23,7 @@ ACTOR BagOfHolding_Giver : CustomInventory replaces BagOfHolding
     Inventory.PickupSound "weapons/backpack_pkup"
 	+FLOATBOB
 	-COUNTITEM
+	Tag "Bag of Holding"
     States
     {
     Spawn:

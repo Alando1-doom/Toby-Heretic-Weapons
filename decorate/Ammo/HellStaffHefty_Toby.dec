@@ -2,6 +2,7 @@ ACTOR HellStaffHefty_Toby : CustomInventory replaces SkullRodHefty
 {
 	Inventory.PickupSound "weapons/runehefty_pkup"
 	Inventory.PickupMessage "$TXT_AMMOSKULLROD2"
+	Tag "Greater Runes"
 States
 	{
 	Spawn:

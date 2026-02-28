@@ -2,6 +2,7 @@ ACTOR CrossbowAmmoDropped_Toby : CustomInventory //Dropped by the Undead Warrior
 {
 	Inventory.PickupSound "weapons/arrows_pkup"
 	Inventory.PickupMessage "$TXT_AMMOCROSSBOW1"
+	Tag "Arrows"
 States
 	{
 	Spawn:

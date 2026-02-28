@@ -5,6 +5,11 @@ ACTOR GoldWand_Toby : GoldWand replaces GoldWand
 	Weapon.AmmoType "GoldWandAmmo"
 	Weapon.SisterWeapon "GoldWandPowered_Toby"
 	Decal HImpScorch1
+<<<<<<< Updated upstream
+=======
+	+WEAPON.CHEATNOTWEAPON
+	Tag "Elven Wand"
+>>>>>>> Stashed changes
 	States
 	{
 	Ready:
@@ -32,6 +37,11 @@ ACTOR GoldWandPowered_Toby : GoldWandPowered
 	Weapon.AmmoType "GoldWandAmmo"
 	Weapon.SisterWeapon "GoldWand_Toby"
 	Decal HImpScorch1
+<<<<<<< Updated upstream
+=======
+	+WEAPON.CHEATNOTWEAPON
+	Tag "Elven Wand Powered Up"
+>>>>>>> Stashed changes
 	States
 	{
 	Fire:

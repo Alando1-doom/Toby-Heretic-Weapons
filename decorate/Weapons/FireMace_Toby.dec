@@ -58,6 +58,7 @@ ACTOR FireMace_Giver : CustomInventory replaces Mace
     Inventory.PickupMessage "$TXT_WPNMACE"
 	Inventory.RespawnTics 105
 	Inventory.PickupSound ""
+	Tag "Fire Mace"
     States
     {
     Spawn:

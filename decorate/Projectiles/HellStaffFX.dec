@@ -3,4 +3,44 @@ ACTOR HornRodFX1_Toby : HornRodFX1 replaces HornRodFX1
 	Speed 25
 	+THRUGHOST
 	Decal HornyRainMaker
+	States
+	{
+	Spawn:
+		FX00 A 1 Bright A_PlaySoundEx("projectiles/hellstaff1", "Auto", 1, 0)
+		FX00 A 5 Bright
+		FX00 B 6 BRIGHT
+		Loop
+	Death:
+		FX00 H 2 Bright A_StopSound
+		FX00 H 3 Bright A_PlaySoundEx("weapons/hornrodhit", "Auto", 0, 0)
+		FX00 I 5 BRIGHT
+		FX00 JK 4 BRIGHT
+		FX00 LM 3 BRIGHT
+		Stop
+	}
+}
+
+
+ACTOR HornRodFX2_Toby: HornRodFX2 replaces HornRodFX2
+{
+	States
+	{
+	Spawn:
+		FX00 C 1 Bright A_PlaySoundEx("projectiles/hellstaff2", "Auto", 1, 0)
+		FX00 C 2 BRIGHT 
+		FX00 D 3 BRIGHT A_SeekerMissile(10, 30)
+		FX00 E 3 BRIGHT
+		FX00 F 3 BRIGHT A_SeekerMissile(10, 30)
+		Loop
+	Death:
+		FX00 H 1 Bright A_StopSound
+		FX00 H 1 BRIGHT A_AddPlayerRain
+		FX00 H 3 Bright A_PlaySoundEx("weapons/hornrodpowhit", "Auto", 0, 0)
+		FX00 I 5 BRIGHT
+		FX00 J 4 BRIGHT
+		FX00 KLM 3 BRIGHT
+		FX00 G 1 A_HideInCeiling
+		FX00 G 1 A_SkullRodStorm
+		Wait
+	}
 }

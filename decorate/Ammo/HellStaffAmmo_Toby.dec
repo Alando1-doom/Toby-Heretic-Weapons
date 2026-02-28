@@ -4,6 +4,7 @@ ACTOR HellStaffAmmo_Toby : CustomInventory replaces SkullRodAmmo
 {
 	Inventory.PickupSound "weapons/runeammo_pkup"
 	Inventory.PickupMessage "$TXT_AMMOSKULLROD1"
+	Tag "Lesser Runes"
 States
 	{
 	Spawn:

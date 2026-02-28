@@ -4,6 +4,7 @@ ACTOR ClawOrb_Toby : CustomInventory replaces BlasterAmmo
 {
 	Inventory.PickupSound "weapons/claworb_pkup"
 	Inventory.PickupMessage "$TXT_AMMOBLASTER1"
+	Tag "Claw Orb"
 States
 	{
 	Spawn:

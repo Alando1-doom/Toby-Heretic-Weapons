@@ -4,6 +4,7 @@ ACTOR MaceAmmo_Toby : CustomInventory replaces MaceAmmo
 {
 	Inventory.PickupSound "weapons/maceammo_pkup"
 	Inventory.PickupMessage "$TXT_AMMOMACE1"
+	Tag "Mace Spheres"
 States
 	{
 	Spawn:

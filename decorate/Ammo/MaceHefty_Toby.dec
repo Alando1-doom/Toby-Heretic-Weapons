@@ -2,6 +2,7 @@ ACTOR MaceHefty_Toby : CustomInventory replaces MaceHefty
 {
 	Inventory.PickupSound "weapons/macehefty_pkup"
 	Inventory.PickupMessage "$TXT_AMMOMACE2"
+	Tag "Pile of Mace Spheres"
 States
 	{
 	Spawn:
