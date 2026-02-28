@@ -3,11 +3,8 @@ ACTOR Gauntlets_Toby : Gauntlets replaces Gauntlets
 	Game Heretic
 	Inventory.PickupSound "weapons/gauntlet_pkup"
 	Weapon.SisterWeapon "GauntletsPowered_Toby"
-<<<<<<< Updated upstream
-=======
 	+WEAPON.CHEATNOTWEAPON
 	Tag "Gauntlets of the Necromancer"
->>>>>>> Stashed changes
 	States
 	{
 	Spawn:
